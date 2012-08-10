@@ -1,0 +1,5 @@
+# Edit this file and save to dynaguppy_conf.pp to customise the
+# dynaguppy condfiguration
+
+$dynaguppy_puppetmaster = puppet
+$dynagyppy_gitolote			= git

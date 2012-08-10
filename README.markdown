@@ -15,13 +15,15 @@ DYNAmic Git pUPPet... Yeah...
 1. Initialise the Puppet configuration directory as a git working directory:
     # git init
 1. Set the dynaguppy on GitHup as a read-only remote repository:
-		# git remote add origin git://github.com/Aethylred/dynaguppy.git
+		# git remote add upstream git://github.com/Aethylred/dynaguppy.git
 1. Retieve the dynaguppy initial configuration
-		# git pull origin master
+		# git pull upstream master
 1. Ensure that the `master` branch is checked out:
     # git checkout master
 1. Update all require submodules:
 		# git submodule update --init --recursive
+
+Much of ths could be converted into a script later...
 
 # Licensing
 
