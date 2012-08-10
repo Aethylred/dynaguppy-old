@@ -1,5 +1,8 @@
 # Edit this file and save to dynaguppy_conf.pp to customise the
-# dynaguppy condfiguration
+# dynaguppy configuration
 
+# This sets the FQDN of the dynaguppy puppetmaster
 $dynaguppy_puppetmaster	= puppet
+
+# This sets the FQDN of the dynaguppy gitolite server
 $dynaguppy_gitolite			= git

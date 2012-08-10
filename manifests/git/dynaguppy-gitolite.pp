@@ -1,7 +1,7 @@
 # This node defines the dynaguppy gitolite repository
 
-# Either use 'git' as an alias in /etc/hosts or rename this node with
-# the FQDN of the gitolite server in this installation
+# Defines the dynaguppy gitolite server,
+# set this in /etc/puppet/manifests/dynaguppy_conf.pp
 
 node $dynaguppy_gitolite {
 
