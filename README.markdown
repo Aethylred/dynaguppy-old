@@ -22,6 +22,9 @@ DYNAmic Git pUPPet... Yeah...
     # git checkout master
 1. Update all require submodules:
 		# git submodule update --init --recursive
+1. Copy the example dynaguppy configuration to create a new configuration:
+    # cp manifests/dynaguppy_conf.pp.example manifests/dynaguppy_conf.pp
+1. Edit /etc/puppet/manifests/dynaguppy_conf.pp and set at least new settings for *$dynaguppy_puppetmaster* and *$dynaguppy_gitolite* (Do not add the new configuration to version control until asked!)
 
 Much of ths could be converted into a script later...
 
