@@ -21,8 +21,7 @@ DYNAmic Git pUPPet... Yeah...
 1. Ensure that the `master` branch is checked out:
     # git checkout master
 1. Update all require submodules:
-		# git submodule init
-		# git submodule update --recursive
+		# git submodule update --init --recursive
 
 # Licensing
 
