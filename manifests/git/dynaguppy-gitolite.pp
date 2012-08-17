@@ -2,6 +2,6 @@
 
 # Defines the dynaguppy gitolite server,
 
-node 'gitolite' {
+node 'git.local' {
 
 }
