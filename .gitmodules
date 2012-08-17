@@ -11,6 +11,3 @@
 [submodule "modules/passenger"]
 	path = modules/passenger
 	url = git://github.com/puppetlabs/puppetlabs-passenger.git
-[submodule "gcc"]
-	path = gcc
-	url = git://github.com/puppetlabs/puppetlabs-gcc.git
