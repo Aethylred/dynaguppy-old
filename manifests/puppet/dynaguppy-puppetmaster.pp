@@ -5,5 +5,8 @@
 node 'puppet.local' {
 	class {'apache': }
 	class {'gcc': }
-	class {'passenger':	}
+	class {'ruby': }
+	class {'passenger':	
+		require	=> Class['apache','gcc','ruby'],
+	}
 }
