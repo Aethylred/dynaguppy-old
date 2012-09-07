@@ -17,3 +17,6 @@
 [submodule "modules/puppet"]
 	path = modules/puppet
 	url = git://github.com/nesi/puppet-puppet.git
+[submodule "modules/apache"]
+	path = modules/apache
+	url = git://github.com/nesi/puppetlabs-apache.git
