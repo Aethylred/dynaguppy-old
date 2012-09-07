@@ -9,4 +9,7 @@ node 'puppet.local' {
 	class {'passenger':	
 		require	=> Class['apache','gcc','ruby'],
 	}
+	class {'puppet':
+		pluginsync => true,
+	}
 }
