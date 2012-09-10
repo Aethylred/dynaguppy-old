@@ -46,6 +46,14 @@ DYNAmic Git pUPPet... Yeah...
 
 Much of ths could be converted into a script later...
 
+# References
+
+The use of git to manage Puppet environments theme was mangled together from these articles and projects:
+* http://puppetlabs.com/blog/git-workflow-and-puppet-environments/
+* http://sjoeboo.github.com/blog/2012/02/08/moving-puppet-from-subversion-to-git-in-15-minutes-while-adding-dynamic-environments/#disqus_thread
+* https://github.com/pdxcat/puppetsync
+* https://github.com/adrienthebo/puppet-git-hooks
+
 # Licensing
 
 Written by Aaron Hicks (hicksa@landcareresearch.co.nz) for the New Zealand eScience Infrastructure.
