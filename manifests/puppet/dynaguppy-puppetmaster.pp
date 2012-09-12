@@ -12,6 +12,7 @@ node 'puppet.local' {
 
 	class {'puppet':
 		pluginsync => true,
+		storeconfig => true,
 		puppetlabs_repo => true,
 	}
 
