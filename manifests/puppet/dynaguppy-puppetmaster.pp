@@ -12,7 +12,7 @@ node 'puppet.local' {
 
 	class {'puppet':
 		pluginsync 			=> true,
-		storeconfig 		=> true,
+		storeconfigs 		=> true,
 		puppetlabs_repo => true,
 		user_shell			=> '/bin/bash',
 	}
