@@ -3,36 +3,42 @@
 # Defines the dynaguppy puppetmaster,
 
 node 'puppet.local' {
-	class {'apache': }
-	class {'gcc': }
-	class {'ruby': }
-	class {'passenger':	
-		require	=> Class['apache','gcc','ruby'],
+
+	package{'librarian-puppet':
+		ensure		=> latest,
+		provider	=> gem,
 	}
 
-	class {'puppet':
-		pluginsync 			=> true,
-		storeconfigs 		=> true,
-		puppetlabs_repo => true,
-		user_shell			=> '/bin/bash',
-	}
+	# class {'apache': }
+	# class {'gcc': }
+	# class {'ruby': }
+	# class {'passenger':	
+	# 	require	=> Class['apache','gcc','ruby'],
+	# }
 
-	class {'git': }
+	# class {'puppet':
+	# 	pluginsync 			=> true,
+	# 	storeconfigs 		=> true,
+	# 	puppetlabs_repo => true,
+	# 	user_shell			=> '/bin/bash',
+	# }
 
-	# For managing rsa key pair distribution use...
-	include sshauth
-	include sshauth::keymaster
+	# class {'git': }
 
-	# Note keys _must_ be declared in the same
-	# environment as the keymaster/puppetmaster, not in the environment
-	# of the node that will use them
+	# # For managing rsa key pair distribution use...
+	# include sshauth
+	# include sshauth::keymaster
 
-	# declare the key for the puppet user, which is declared in the puppet module
-	sshauth::key{'puppet':
-		user 	=> $puppet::params::user,
-		home	=> $puppet::params::user_home,
-		require => User['puppet'],
-	}
+	# # Note keys _must_ be declared in the same
+	# # environment as the keymaster/puppetmaster, not in the environment
+	# # of the node that will use them
+
+	# # declare the key for the puppet user, which is declared in the puppet module
+	# sshauth::key{'puppet':
+	# 	user 	=> $puppet::params::user,
+	# 	home	=> $puppet::params::user_home,
+	# 	require => User['puppet'],
+	# }
 
 
 }
