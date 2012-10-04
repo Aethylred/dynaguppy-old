@@ -9,6 +9,12 @@ node 'puppet.local' {
 		provider	=> gem,
 	}
 
+	exec{'initialise_modules':
+		path		=> "/usr/local/bin",
+		command	=> "librarian-puppet init",
+		creates => "/etc/puppet/modules/stdlib"
+	}
+
 	# class {'apache': }
 	# class {'gcc': }
 	# class {'ruby': }
