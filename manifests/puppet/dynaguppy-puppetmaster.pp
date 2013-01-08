@@ -15,7 +15,8 @@ node 'puppet.local' {
 	}
 
 	exec{'initialise_modules':
-		path		=> "/usr/local/bin",
+		path	=> "/usr/local/bin",
+		cwd		=> "/etc/puppet",
 		command	=> "librarian-puppet init",
 		creates => "/etc/puppet/modules/stdlib",
 		require => Package['librarian-puppet']
