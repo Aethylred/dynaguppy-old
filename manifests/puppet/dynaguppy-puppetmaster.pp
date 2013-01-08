@@ -18,7 +18,7 @@ node 'puppet.local' {
 	}
 
 	exec{'initialise_modules':
-		path	=> "/usr/local/bin",
+		path	=> "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
 		cwd		=> "/etc/puppet",
 		command	=> "librarian-puppet install",
 		creates => "/etc/puppet/modules/stdlib",
