@@ -8,7 +8,10 @@ node 'puppet.local' {
 		ensure		=> installed,
 	}
 
-	package{'librarian-puppet':
+
+# maestrodev has some patches we need!
+
+	package{'librarian-puppet-maestrodev':
 		ensure		=> latest,
 		provider	=> gem,
 		require		=> Package['ruby-dev','build-essential']
@@ -17,9 +20,9 @@ node 'puppet.local' {
 	exec{'initialise_modules':
 		path	=> "/usr/local/bin",
 		cwd		=> "/etc/puppet",
-		command	=> "librarian-puppet init",
+		command	=> "librarian-puppet install",
 		creates => "/etc/puppet/modules/stdlib",
-		require => Package['librarian-puppet']
+		require => Package['librarian-puppet-maestrodev']
 	}
 
 	# class {'apache': }
