@@ -4,15 +4,21 @@
 
 node 'puppet.local' {
 
+	package{'ruby-dev':
+		ensure		=> installed,
+	}
+
 	package{'librarian-puppet':
 		ensure		=> latest,
 		provider	=> gem,
+		require		=> Package['ruby-dev']
 	}
 
 	exec{'initialise_modules':
 		path		=> "/usr/local/bin",
 		command	=> "librarian-puppet init",
-		creates => "/etc/puppet/modules/stdlib"
+		creates => "/etc/puppet/modules/stdlib",
+		require => Package['librarian-puppet']
 	}
 
 	# class {'apache': }
