@@ -22,7 +22,8 @@ node 'puppet.local' {
 		cwd		=> "/etc/puppet",
 		command	=> "librarian-puppet install",
 		creates => "/etc/puppet/modules/stdlib",
-		require => Package['librarian-puppet-maestrodev']
+		require => Package['librarian-puppet-maestrodev'],
+		timeout => 300,
 	}
 
 	# class {'apache': }
