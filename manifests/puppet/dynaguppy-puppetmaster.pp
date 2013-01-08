@@ -4,14 +4,14 @@
 
 node 'puppet.local' {
 
-	package{'ruby-dev':
+	package{['ruby-dev','build-essential']:
 		ensure		=> installed,
 	}
 
 	package{'librarian-puppet':
 		ensure		=> latest,
 		provider	=> gem,
-		require		=> Package['ruby-dev']
+		require		=> Package['ruby-dev','build-essential']
 	}
 
 	exec{'initialise_modules':
