@@ -18,12 +18,13 @@ node 'puppet.local' {
 	}
 
 	exec{'initialise_modules':
-		path	=> "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-		cwd		=> "/etc/puppet",
-		command	=> "librarian-puppet install",
-		creates => "/etc/puppet/modules/stdlib",
-		require => Package['librarian-puppet-maestrodev'],
-		timeout => 300,
+		path		=> "/usr/local/bin",
+		environment	=> ["HOME=/root"],
+		cwd			=> "/etc/puppet",
+		command		=> "librarian-puppet install",
+		creates 	=> "/etc/puppet/modules/stdlib",
+		require 	=> Package['librarian-puppet-maestrodev'],
+		timeout 	=> 300,
 	}
 
 	# class {'apache': }
