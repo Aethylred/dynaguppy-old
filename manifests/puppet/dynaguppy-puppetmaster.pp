@@ -18,7 +18,7 @@ node 'puppet.local' {
 	}
 
 	exec{'initialise_modules':
-		path		=> "/usr/local/bin",
+		path		=> ["/usr/local/bin","/usr/bin"],
 		environment	=> ["HOME=/root"],
 		cwd			=> "/etc/puppet",
 		command		=> "librarian-puppet install",
@@ -27,12 +27,12 @@ node 'puppet.local' {
 		timeout 	=> 300,
 	}
 
-	# class {'apache': }
-	# class {'gcc': }
-	# class {'ruby': }
-	# class {'passenger':	
-	# 	require	=> Class['apache','gcc','ruby'],
-	# }
+	class {'apache': }
+	class {'gcc': }
+	class {'ruby': }
+	class {'passenger':	
+	require	=> Class['apache','gcc','ruby'],
+	}
 
 	# class {'puppet':
 	# 	pluginsync 			=> true,
