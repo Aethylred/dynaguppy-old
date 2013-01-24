@@ -2,7 +2,6 @@
 forge "http://forge.puppetlabs.com"
 
 mod "puppetlabs/stdlib"
-mod "puppetlabs/passenger"
 mod "puppetlabs/gcc"
 mod "puppetlabs/ruby"
 mod "puppetlabs/apt"

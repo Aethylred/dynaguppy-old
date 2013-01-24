@@ -7,9 +7,10 @@ node 'puppet.local' {
 	class {'gcc': }
 	class {'apache': }
 	class {'ruby': }
-	class {'passenger':	
-	require	=> Class['apache','gcc','ruby'],
-	}
+	class {'apache::mod::passenger': }
+	# class {'passenger':	
+	# require	=> Class['apache','gcc','ruby'],
+	# }
 
 	# class {'puppet':
 	# 	pluginsync 			=> true,
