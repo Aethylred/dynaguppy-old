@@ -9,5 +9,7 @@ cd /etc/puppet
 /usr/bin/git pull --force upstream master
 /usr/bin/git checkout --force master
 /usr/bin/gem install librarian-puppet-maestrodev
+# May have to pull the latest version directyl from github
+# gem 'librarian-puppet-maestrodev', :git => 'git://github.com/maestrodev/librarian-puppet-maestrodev.git', :branch => 'maestrodev'
 /usr/local/bin/
 echo "Dynaguppy should now be ready to go."
