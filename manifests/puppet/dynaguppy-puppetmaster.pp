@@ -24,8 +24,7 @@ node 'puppet.local' {
 	class {'git': }
 
 	# # For managing rsa key pair distribution use...
-	# include sshauth
-	# include sshauth::keymaster
+  include sshauth::keymaster
 
 	# # Note keys _must_ be declared in the same
 	# # environment as the keymaster/puppetmaster, not in the environment
