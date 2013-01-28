@@ -6,9 +6,13 @@ node 'puppet.local' {
 	class {'apache': }
 	class {'gcc': }
 	class {'ruby': }
-	class {'passenger':	
-		require	=> Class['apache','gcc','ruby'],
-	}
+
+	# Let's work with the Puppetlabs Apache module version first...
+	# class {'passenger':	
+	# 	require	=> Class['apache','gcc','ruby'],
+	# }
+
+	class {'apache::mod::passenger': }
 
 	class {'puppet':
 		pluginsync 			=> true,
