@@ -1,6 +1,6 @@
 # The primary site manifest
 
-include sshauth
+# include sshauth
 
 # These subdirectories are required for dynaguppy
 import "./puppet/*"
