@@ -21,6 +21,10 @@ node 'puppet.local' {
 		user_shell			=> '/bin/bash',
 	}
 
+	class {'puppet::hiera':
+		hiera_hierarchy => ['common','users'],
+	}
+
 	class {'git': }
 
 	# # For managing rsa key pair distribution use...
