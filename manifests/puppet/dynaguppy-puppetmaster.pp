@@ -22,7 +22,7 @@ node 'puppet.local' {
 	}
 
 	class {'puppet::hiera':
-		hiera_hierarchy => ['common','users'],
+		hiera_hierarchy => ['common','user-%{user}'],
 	}
 
 	class {'git': }
