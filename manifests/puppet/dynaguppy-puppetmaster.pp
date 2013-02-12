@@ -29,11 +29,11 @@ node 'puppet.local' {
 	# For managing key pair distribution use...
   include sshkeys::keymaster
 
-	# Note keys _must_ be declared in the same
+	# Note: keys _must_ be declared in the same
 	# environment as the keymaster/puppetmaster, not in the environment
 	# of the node that will use them
 
-	# keys for the puppet and git users
+	# keys for the puppet and git users, these keys are REQUIRED for dynaguppy
 	sshkeys::create_key{'puppet_ssh':	}
 	sshkeys::create_key{'git_ssh': }
 
@@ -50,5 +50,8 @@ node 'puppet.local' {
 		user 		=> $puppet::params::user,
 		home 		=> $puppet::params::user_home,
 	}
+
+	# The puppet user needs to be a git user too
+	git::user{$puppet::params::user: }
 
 }
