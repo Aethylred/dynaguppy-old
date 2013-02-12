@@ -16,10 +16,12 @@ node 'puppet.local' {
 
 	class {'puppet':
 		pluginsync 			=> true,
-		storeconfigs 		=> true,
+		storeconfigs 		=> false,
 		puppetlabs_repo => true,
 		user_shell			=> '/bin/bash',
 	}
+
+	class {'puppet::master': }
 
 	# set up a basic hiera configuration to stop it reporting errors
 	class {'puppet::hiera':	}
