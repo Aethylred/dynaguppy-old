@@ -21,6 +21,9 @@ node 'puppet.local' {
 		user_shell			=> '/bin/bash',
 	}
 
+	# set up a basic hiera configuration to stop it reporting errors
+	class {'puppet::hiera':	}
+
 	class {'git': }
 
 	# # For managing rsa key pair distribution use...
