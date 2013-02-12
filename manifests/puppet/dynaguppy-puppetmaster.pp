@@ -26,19 +26,15 @@ node 'puppet.local' {
 
 	class {'git': }
 
-	# # For managing rsa key pair distribution use...
-  #Sinclude sshauth::keymaster
+	# For managing key pair distribution use...
+  include sshkeys::keymaster
 
-	# # Note keys _must_ be declared in the same
-	# # environment as the keymaster/puppetmaster, not in the environment
-	# # of the node that will use them
+	# Note keys _must_ be declared in the same
+	# environment as the keymaster/puppetmaster, not in the environment
+	# of the node that will use them
 
-	# # declare the key for the puppet user, which is declared in the puppet module
-	# sshauth::key{'puppet':
-	# 	user 	=> $puppet::params::user,
-	# 	home	=> $puppet::params::user_home,
-	# 	require => User['puppet'],
-	# }
-
+	# keys for the puppet and git users
+	sshkeys::create_key{'puppet_ssh':	}
+	sshkeys::create_key{'git_ssh': }
 
 }
