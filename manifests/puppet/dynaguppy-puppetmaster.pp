@@ -21,9 +21,8 @@ node 'puppet.local' {
 		user_shell			=> '/bin/bash',
 	}
 
-	class {'puppet::hiera':
-		hiera_hierarchy => ['common','user-%{user}'],
-	}
+	# set up a basic hiera configuration to stop it reporting errors
+	class {'puppet::hiera':	}
 
 	class {'git': }
 
