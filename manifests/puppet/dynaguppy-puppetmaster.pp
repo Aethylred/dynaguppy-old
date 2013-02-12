@@ -37,4 +37,18 @@ node 'puppet.local' {
 	sshkeys::create_key{'puppet_ssh':	}
 	sshkeys::create_key{'git_ssh': }
 
+	# The puppet user needs the key pair
+	sshkeys::set_client_key_pair{'puppet_user_key':
+		keyname	=> 'puppet_ssh',
+		user 		=> $puppet::params::user,
+		home		=> $puppet::params::user_home,
+	}
+
+	# The git user needs to be able to ssh in as the puppet user
+	sshkeys::set_authorized_keys{'puppet_key_for_git':
+		keyname	=> 'git_ssh',
+		user 		=> $puppet::params::user,
+		home 		=> $puppet::params::user_home,
+	}
+
 }
