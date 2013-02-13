@@ -2,7 +2,15 @@
 
 # Defines the dynaguppy gitolite server,
 
-node 'git.local' {
+node $git_fqdn {
+
+	class {'puppet':
+		pluginsync 			=> true,
+		storeconfigs 		=> false,
+		puppetlabs_repo => true,
+		user_shell			=> '/bin/bash',
+		puppetmaster 		=> $puppetmaster_fqdn,
+	}
 
 	class {'git': }
 

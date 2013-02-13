@@ -2,25 +2,21 @@
 
 # Defines the dynaguppy puppetmaster,
 
-node 'puppet.local' {
+node $puppetmaster_fqdn {
 	class {'apache': }
 	class {'gcc': }
 	class {'ruby': }
-
-	# Let's work with the Puppetlabs Apache module version first...
-	# class {'passenger':	
-	# 	require	=> Class['apache','gcc','ruby'],
-	# }
-
-	class {'apache::mod::passenger': }
 
 	class {'puppet':
 		pluginsync 			=> true,
 		storeconfigs 		=> false,
 		puppetlabs_repo => true,
 		user_shell			=> '/bin/bash',
+		puppetmaster 		=> $puppetmaster_fqdn,
 	}
 
+	# Set up a the puppetmaster
+	class {'apache::mod::passenger': }
 	class {'puppet::master': }
 
 	# set up a basic hiera configuration to stop it reporting errors
