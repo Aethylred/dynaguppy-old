@@ -2,7 +2,7 @@
 
 # Defines the dynaguppy gitolite server,
 
-node /^#{git_fqdn}$/ {
+node 'git.local' {
 
 	class {'puppet':
 		pluginsync 			=> true,
