@@ -2,7 +2,7 @@
 
 # Defines the dynaguppy puppetmaster,
 
-node $puppetmaster_fqdn {
+node /^#{puppetmaster_fqdn}$/ {
 	class {'apache': }
 	class {'gcc': }
 	class {'ruby': }
