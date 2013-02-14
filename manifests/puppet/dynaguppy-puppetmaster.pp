@@ -16,7 +16,16 @@ node 'puppet.local' {
 	}
 
 	# Set up a the puppetmaster
-	class {'apache::mod::passenger': }
+	class {'apache::mod::passenger': 
+		passengerhighperformance 	=> 'on',
+		passengermaxpoolsize			=> 12,
+		passengerpoolidletime			=> 1500,
+		# passengermaxrequests			=> 1000,
+		passengerstatthrottlerate	=> 120,
+		rackautodetect						=> 'off',
+		railsautodetect 					=> 'off',
+	}
+
 	class {'puppet::master': }
 
 	# set up a basic hiera configuration to stop it reporting errors
