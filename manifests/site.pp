@@ -3,7 +3,7 @@
 # Set the names for the key servers in the dynaguppy setup
 
 $puppetmaster_fqdn = 'puppet.local'
-$git_fqdn	= 'git.local'
+$git_fqdn = 'git.local'
 
 # Configure the firewall defaults as per https://github.com/puppetlabs/puppetlabs-firewall
 # Always persist firewall rules
@@ -15,7 +15,7 @@ exec { 'persist-firewall':
   refreshonly => true,
 }
 
-# These defaults ensure that the persistence command is executed after 
+# These defaults ensure that the persistence command is executed after
 # every change to the firewall, and that pre & post classes are run in the
 # right order to avoid potentially locking you out of your box during the
 # first puppet run.
