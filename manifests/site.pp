@@ -9,7 +9,7 @@ $git_fqdn	= 'git.local'
 # Always persist firewall rules
 exec { 'persist-firewall':
   command     => $operatingsystem ? {
-    'debian'          => '/sbin/iptables-save > /etc/iptables/rules.v4',
+    /(Debian|Ubuntu)/ => '/sbin/iptables-save > /etc/iptables/rules.v4',
     /(RedHat|CentOS)/ => '/sbin/iptables-save > /etc/sysconfig/iptables',
   },
   refreshonly => true,
