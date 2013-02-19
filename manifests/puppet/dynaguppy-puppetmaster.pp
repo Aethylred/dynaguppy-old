@@ -20,7 +20,7 @@ node 'puppet.local' {
       state   => ['NEW'],
       dport   => '22',
       proto   => 'tcp',
-      action  => 'ACCEPT',
+      action  => 'accept',
   }
 
   # Set up a the puppetmaster
