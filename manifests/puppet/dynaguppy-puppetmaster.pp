@@ -17,10 +17,10 @@ node 'puppet.local' {
 
   # Allow ssh through the firewall
   firewall { '100 allow ssh':
-      state => ['NEW'],
-      dport => '22',
-      proto => 'tcp',
-      jump  => 'ACCEPT',
+      state   => ['NEW'],
+      dport   => '22',
+      proto   => 'tcp',
+      action  => 'ACCEPT',
   }
 
   # Set up a the puppetmaster
