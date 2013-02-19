@@ -15,6 +15,14 @@ node 'puppet.local' {
     puppetmaster    => $puppetmaster_fqdn,
   }
 
+  # Allow ssh through the firewall
+  firewall { '100 allow ssh':
+      state => ['NEW'],
+      dport => '22',
+      proto => 'tcp',
+      jump  => 'ACCEPT',
+  }
+
   # Set up a the puppetmaster
   class {'apache::mod::passenger': }
   class {'puppet::master': }
