@@ -53,6 +53,7 @@ The use of git to manage Puppet environments theme was mangled together from the
 * http://sjoeboo.github.com/blog/2012/02/08/moving-puppet-from-subversion-to-git-in-15-minutes-while-adding-dynamic-environments/#disqus_thread
 * https://github.com/pdxcat/puppetsync
 * https://github.com/adrienthebo/puppet-git-hooks
+* http://hunnur.com/blog/2010/10/dynamic-git-branch-puppet-environments/
 
 # Licensing
 
