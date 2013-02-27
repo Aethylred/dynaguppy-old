@@ -23,6 +23,9 @@ node 'puppet.local' {
       action  => 'accept',
   }
 
+  # Set up concat
+  include concat::setup
+
   # Set up a the puppetmaster
   class {'apache::mod::passenger': }
   class {'puppet::master': }
