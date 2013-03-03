@@ -63,4 +63,7 @@ node 'puppet.local' {
   # The puppet user needs to be a git user too
   git::user{$puppet::params::user: }
 
+  # Install and configure the Puppet Dashboard, Comment out from this line to stop.
+  class{puppetdashboard: }
+  # Finished installing the Puppet Dashboard. Finish commenting to remove.
 }
