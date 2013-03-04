@@ -63,6 +63,19 @@ node 'puppet.local' {
   # The puppet user needs to be a git user too
   git::user{$puppet::params::user: }
 
+  # Set up MySQL, comment these out if a remote mysql server is used.
+  if hiera('dynaguppy_mysql_root_passwd') {
+    $mysql_root_password = hiera('dynaguppy_mysql_root_passwd')
+  } else {
+    $mysql_root_password = 'an unsafe password'
+  }
+
+  class{'mysql': }
+  class{'mysql::server':
+    config_hash => {'root_password' => $mysql_root_password}
+  }
+  # end of MySQL block
+
   # Install and configure the Puppet Dashboard, Comment out from this line to stop.
   class{puppetdashboard: }
   # Finished installing the Puppet Dashboard. Finish commenting to remove.
