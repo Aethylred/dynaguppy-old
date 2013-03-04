@@ -31,6 +31,3 @@
 [submodule "modules/puppetdashboard"]
 	path = modules/puppetdashboard
 	url = git://github.com/nesi/puppet-puppetdashboard.git
-[submodule "modules/mysql"]
-	path = modules/mysql
-	url = git://github.com/puppetlabs/puppetlabs-mysql.git
