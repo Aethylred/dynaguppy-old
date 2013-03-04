@@ -68,7 +68,10 @@ node 'puppet.local' {
 
   class{'mysql': }
   class{'mysql::server':
-    config_hash => {'root_password' => $mysql_root_password}
+    config_hash => {
+      'root_password'       => $mysql_root_password,
+      'max_allowed_packet'  => '32M',
+    }
   }
   # end of MySQL block
 
