@@ -64,11 +64,7 @@ node 'puppet.local' {
   git::user{$puppet::params::user: }
 
   # Set up MySQL, comment these out if a remote mysql server is used.
-  if hiera('dynaguppy_mysql_root_passwd') {
-    $mysql_root_password = hiera('dynaguppy_mysql_root_passwd')
-  } else {
-    $mysql_root_password = 'an unsafe password'
-  }
+  $mysql_root_password = hiera('dynaguppy_mysql_root_passwd','an unsafe password')
 
   class{'mysql': }
   class{'mysql::server':
