@@ -70,6 +70,9 @@ node 'puppet.local' {
 
   class{'mysql': }
   class{'mysql::ruby': }
+  class{'mysql::dev':
+    mysqlclient => present,
+  }
   class{'mysql::server':
     config_hash => {
       'root_password'       => $mysql_root_password,
