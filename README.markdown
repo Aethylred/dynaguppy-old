@@ -24,11 +24,11 @@ DYNAmic Git pUPPet... Yeah...
 
 1. Set the dynaguppy on GitHup as a read-only remote repository:
 
-	git remote add upstream git://github.com/Aethylred/dynaguppy.git
+  git remote add upstream git://github.com/Aethylred/dynaguppy.git
 
 1. Retieve the dynaguppy initial configuration
 
-	git pull --force upstream master
+  git pull --force upstream master
 
 1. Ensure that the `master` branch is checked out:
 
@@ -36,7 +36,7 @@ DYNAmic Git pUPPet... Yeah...
 
 1. Update all require submodules:
 
-	git submodule update --init --recursive
+  git submodule update --init --recursive
 
 1. Copy the example dynaguppy puppet node configuration to create a new configuration:
 
@@ -53,6 +53,7 @@ The use of git to manage Puppet environments theme was mangled together from the
 * http://sjoeboo.github.com/blog/2012/02/08/moving-puppet-from-subversion-to-git-in-15-minutes-while-adding-dynamic-environments/#disqus_thread
 * https://github.com/pdxcat/puppetsync
 * https://github.com/adrienthebo/puppet-git-hooks
+* http://hunnur.com/blog/2010/10/dynamic-git-branch-puppet-environments/
 
 # Licensing
 
