@@ -31,3 +31,6 @@
 [submodule "modules/mysql"]
 	path = modules/mysql
 	url = git://github.com/nesi/puppetlabs-mysql.git
+[submodule "modules/firewall"]
+	path = modules/firewall
+	url = git://github.com/dcarley/puppetlabs-firewall.git
