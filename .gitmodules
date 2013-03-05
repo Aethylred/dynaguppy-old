@@ -31,3 +31,6 @@
 [submodule "modules/firewall"]
 	path = modules/firewall
 	url = git://github.com/dcarley/puppetlabs-firewall.git
+[submodule "modules/ruby"]
+	path = modules/ruby
+	url = git://github.com/nesi/puppetlabs-ruby.git
