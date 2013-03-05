@@ -82,6 +82,9 @@ node 'puppet.local' {
   # end of MySQL block
 
   # Install and configure the Puppet Dashboard, Comment out from this line to stop.
-  class{puppetdashboard: }
+  class{puppetdashboard:
+    git_source  => 'git://github.com/sodabrew/puppet-dashboard.git',
+    git_branch  => 'rails3',
+  }
   # Finished installing the Puppet Dashboard. Finish commenting to remove.
 }
