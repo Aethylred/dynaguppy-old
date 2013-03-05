@@ -7,9 +7,6 @@
 [submodule "modules/gcc"]
 	path = modules/gcc
 	url = git://github.com/puppetlabs/puppetlabs-gcc.git
-[submodule "modules/ruby"]
-	path = modules/ruby
-	url = git://github.com/puppetlabs/puppetlabs-ruby.git
 [submodule "modules/puppet"]
 	path = modules/puppet
 	url = git://github.com/nesi/puppet-puppet.git
