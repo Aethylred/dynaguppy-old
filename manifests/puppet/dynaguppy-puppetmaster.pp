@@ -7,6 +7,7 @@ node 'puppet.local' {
   class {'apache': }
   class {'gcc': }
   class {'ruby': }
+  class {'ruby::dev': }
 
   class {'puppet':
     pluginsync      => true,
@@ -68,6 +69,7 @@ node 'puppet.local' {
   $mysql_root_password = hiera('dynaguppy_mysql_root_passwd','an unsafe password')
 
   class{'mysql': }
+  class{'mysql::ruby': }
   class{'mysql::server':
     config_hash => {
       'root_password'       => $mysql_root_password,
