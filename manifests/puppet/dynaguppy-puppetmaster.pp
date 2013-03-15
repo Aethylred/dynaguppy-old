@@ -8,6 +8,7 @@ node 'puppet.local' {
   class {'gcc': }
   class {'ruby': }
   class {'ruby::dev': }
+  include ruby::bundler
 
   class {'puppet':
     pluginsync      => true,
