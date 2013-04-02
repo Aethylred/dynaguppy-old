@@ -4,6 +4,8 @@
 
 node 'git.local' {
 
+  class {'firewall':}
+
   class {'puppet':
     pluginsync      => true,
     storeconfigs    => false,
