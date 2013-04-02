@@ -84,9 +84,28 @@ The default name for the git repository is `git.local`, the PuppetMaster needs t
 1. Log in as `root`
 1. Install `puppet` with:
 
-    ```
-    apt-get install puppet
-    ```
+  ```
+  apt-get install puppet
+  ```
+1. Edit `/etc/puppet/conf` and make sure the `[main]` block contains  a server statement giving the FQDN of the puppet master, for example:
+
+  ```
+  server=puppet.local
+  ```
+  **NOTE:** be sure that the git server can resolve this name correctly, editing `/etc/hosts` may be required.
+1. Run the puppet agent and request a certificate from the puppet server:
+
+  ```
+   puppet agent --no-daemonize --waitforcert 60
+  ```
+1. While logged into the PuppetMaster as root, sign the Git server certificate with :
+
+  ```
+  puppet cert sign git.local
+  ```
+  **Note:** Change the FQDN `git.local` to match the git server's address.
+1. On the Git server, cancel running the puppet agent with `ctrl-c`
+1.
 
 # References
 
