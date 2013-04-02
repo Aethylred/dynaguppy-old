@@ -1,3 +1,3 @@
-class dynaguppy::firewall{
+class dynaguppy::firewall {
   include dynaguppy::firewall::persist
 }

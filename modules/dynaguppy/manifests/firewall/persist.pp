@@ -4,7 +4,7 @@
 # Check the readme at:
 # https://github.com/puppetlabs/puppetlabs-firewall/blob/master/README.markdown
 
-class dynaguppy::firewall::persist{
+class dynaguppy::firewall::persist {
 
   # These defaults ensure that the persistence command is executed after
   # every change to the firewall, and that pre & post classes are run in the
