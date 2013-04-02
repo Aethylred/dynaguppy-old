@@ -21,60 +21,60 @@ By default the PuppetMaster uses the name `puppet.local`
 
     ```
     apt-get install git
-	```
+  ```
 1. Change to the Puppet configuration directory
 
-	```
+  ```
     cd /etc/puppet
     ```
 1. Initialise the Puppet configuration directory as a git working directory:
 
-	```
+  ```
     git init
     ```
 1. Set the dynaguppy on GitHup as a read-only remote repository:
 
-	```
-	git remote add upstream git://github.com/Aethylred/dynaguppy.git
-	```
+  ```
+  git remote add upstream git://github.com/Aethylred/dynaguppy.git
+  ```
 1. Retrieve the dynaguppy initial configuration
 
-	```
-  	git pull --force upstream master
-	```
+  ```
+    git pull --force upstream master
+  ```
 1. Ensure that the `master` branch is checked out:
 
-	```
+  ```
     git checkout --force master
-	```
+  ```
 
-	**Note:** Master will be latest stable release, you may consider using a tag for a specific known version of dynaguppy.
+  **Note:** Master will be latest stable release, you may consider using a tag for a specific known version of dynaguppy.
 1. Update all require submodules:
 
-	```
-  	git submodule update --init --recursive
-	```
+  ```
+    git submodule update --init --recursive
+  ```
 1. Edit `/etc/puppet/manifests/puppet/dynaguppy-puppet.pp` and at least change the name of the  node to the `$fqdn` of the server dynaguppy is being configured.
 1. Commit your changes:
 
-	```
-	git commit -am "First changes after cloning dynaguppy from source"
-	```
+  ```
+  git commit -am "First changes after cloning dynaguppy from source"
+  ```
 1. Apply the puppet configuration:
 
-	```
-	puppet apply /etc/puppet/manifests/site.pp
-	```
+  ```
+  puppet apply /etc/puppet/manifests/site.pp
+  ```
 
-	**Note:** This may need to be repeated a couple of times to resolve all outstanding puppet dependencies.
+  **Note:** This may need to be repeated a couple of times to resolve all outstanding puppet dependencies.
 
 1. Verify that the puppetmaster is running:
 
-	```
-	puppet agent --test
-	```
+  ```
+  puppet agent --test
+  ```
 
-	**Note:** It may be necessary to register the puppetmaster with itself.
+  **Note:** It may be necessary to register the puppetmaster with itself.
 
 ## The Git repository
 
