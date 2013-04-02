@@ -23,7 +23,7 @@ node 'git.local' {
   }
 
   # The git user needs a key pair
-  sshkeys::set_client_key_pair{'puppet_user_key':
+  sshkeys::set_client_key_pair{'git_user_key':
     keyname => 'git_ssh',
     user    => 'git',
     home    => '/home/git',
@@ -31,5 +31,13 @@ node 'git.local' {
 
   # the git user needs to be a git user
   git::user{'git': }
+
+  class{'gitolite':
+    user      => 'git',
+    group     => $apache::params::group,
+    base_dir  => '/home/git',
+    repo_dir  => "${base_dir}/repositories",
+    require   => [Git::User['git']]
+  }
 
 }
