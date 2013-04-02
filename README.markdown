@@ -6,6 +6,10 @@ The intention of this project is to use git to deploy puppet to deploy puppet to
 
 # Installation
 
+## The Puppet Master
+
+By default the PuppetMaster uses the name `puppet.local`
+
 1. Ideally start with a freshly installed Ubuntu Server, 12.04 x86_64 or later
 1. Log in as `root`
 1. Install `puppet` with:
@@ -43,7 +47,7 @@ The intention of this project is to use git to deploy puppet to deploy puppet to
 	```
     git checkout --force master
 	```
-	
+
 	**Note:** Master will be latest stable release, you may consider using a tag for a specific known version of dynaguppy.
 1. Update all require submodules:
 
@@ -61,16 +65,28 @@ The intention of this project is to use git to deploy puppet to deploy puppet to
 	```
 	puppet apply /etc/puppet/manifests/site.pp
 	```
-	
+
 	**Note:** This may need to be repeated a couple of times to resolve all outstanding puppet dependencies.
-	
+
 1. Verify that the puppetmaster is running:
 
 	```
 	puppet agent --test
 	```
-	
+
 	**Note:** It may be necessary to register the puppetmaster with itself.
+
+## The Git repository
+
+The default name for the git repository is `git.local`, the PuppetMaster needs to be up and running first.
+
+1. Ideally start with a freshly installed Ubuntu Server, 12.04 x86_64 or later
+1. Log in as `root`
+1. Install `puppet` with:
+
+    ```
+    apt-get install puppet
+    ```
 
 # References
 
