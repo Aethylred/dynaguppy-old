@@ -3,6 +3,7 @@
 # Defines the dynaguppy puppetmaster,
 
 node 'puppet.local' {
+  class {'firewall':}
   class {'apache': }
   class {'gcc': }
   class {'ruby': }
