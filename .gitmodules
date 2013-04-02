@@ -28,3 +28,6 @@
 [submodule "modules/gitolite"]
 	path = modules/gitolite
 	url = git://github.com/nesi/puppet-gitolite.git
+[submodule "modules/firewall"]
+	path = modules/firewall
+	url = git://github.com/puppetlabs/puppetlabs-firewall.git
