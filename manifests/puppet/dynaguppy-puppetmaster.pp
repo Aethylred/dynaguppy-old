@@ -9,7 +9,7 @@ node 'puppet.local' {
   class {'ruby': }
 
   class {'puppet':
-    ensure          => '3.1.1',
+    ensure          => '3.1.1-1puppetlabs1',
     pluginsync      => true,
     storeconfigs    => false,
     puppetlabs_repo => true,
