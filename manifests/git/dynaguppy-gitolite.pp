@@ -4,7 +4,7 @@
 
 node 'git.local' {
 
-  class {'firewall':}
+  #class {'firewall':}
 
   # Allow ssh through the firewall
   firewall { '100 allow ssh':
