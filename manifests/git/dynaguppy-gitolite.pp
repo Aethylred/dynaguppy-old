@@ -6,6 +6,14 @@ node 'git.local' {
 
   class {'firewall':}
 
+  # Allow ssh through the firewall
+  firewall { '100 allow ssh':
+      state   => ['NEW'],
+      dport   => '22',
+      proto   => 'tcp',
+      action  => 'accept',
+  }
+
   class {'puppet':
     pluginsync      => true,
     storeconfigs    => false,
