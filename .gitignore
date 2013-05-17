@@ -33,3 +33,4 @@ _ReSharper*/
 *.sublime-workspace
 .tmp/
 modules/
+!modules/dynaguppy
