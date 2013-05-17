@@ -3,10 +3,10 @@
 # Defines the dynaguppy puppetmaster,
 
 node 'puppet.local' {
-
+  include concat::setup
 	class {'gcc': }
+  class {'ruby': }
 	class {'apache': }
-	class {'ruby': }
 	class {'apache::mod::passenger': }
 	# class {'passenger':	
 	# require	=> Class['apache','gcc','ruby'],
