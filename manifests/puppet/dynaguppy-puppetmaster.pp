@@ -6,35 +6,33 @@ node 'puppet.local' {
   include concat::setup
   class {'gcc': }
   class {'ruby': }
+
+  class {'puppet':
+    pluginsync      => true,
+    storeconfigs    => false,
+    puppetlabs_repo => true,
+    user_shell      => '/bin/bash',
+    puppetmaster    => $puppetmaster_fqdn,
+  }
+
+
+  # Set up the puppetmaster on passenger
   class {'apache': }
-  class {'apache::mod::passenger': }
-  # class {'passenger': 
-  # require => Class['apache','gcc','ruby'],
-  # }
+  class {'apache::mod::passenger':
+    passenger_high_performance    => 'off',
+    passenger_max_pool_size       => 12,
+    passenger_pool_idle_time      => 1500,
+    # passenger_max_requests        => 1000,
+    passenger_stat_throttle_rate  => 120,
+    rack_autodetect               => 'off',
+    rails_autodetect              => 'off',
+  }
+  class {'puppet::master': }
 
-  # class {'puppet':
-  #   pluginsync      => true,
-  #   storeconfigs    => true,
-  #   puppetlabs_repo => true,
-  #   user_shell      => '/bin/bash',
-  # }
+  # set up a basic hiera configuration to stop it reporting errors
+  class {'puppet::hiera': }
 
-  # class {'git': }
-
-  # # For managing rsa key pair distribution use...
-  # include sshauth
-  # include sshauth::keymaster
-
-  # # Note keys _must_ be declared in the same
-  # # environment as the keymaster/puppetmaster, not in the environment
-  # # of the node that will use them
-
-  # # declare the key for the puppet user, which is declared in the puppet module
-  # sshauth::key{'puppet':
-  #   user  => $puppet::params::user,
-  #   home  => $puppet::params::user_home,
-  #   require => User['puppet'],
-  # }
+  class {'git': }
 
 
 }
