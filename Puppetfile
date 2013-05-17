@@ -13,9 +13,9 @@ mod "git",
 
 mod "puppet",
 	:git => "git://github.com/nesi/puppet-puppet.git"
-  :ref => 'hunner_refactor_modules'
+  :ref => "hunner_refactor_modules"
 
 mod "apache",
 	:git => "git://github.com/nesi/puppetlabs-apache.git"
-  :ref => 'all_features'
+  :ref => "all_features"
 
