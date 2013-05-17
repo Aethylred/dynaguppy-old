@@ -21,3 +21,6 @@ mod "apache",
   :git => "git://github.com/nesi/puppetlabs-apache.git",
   :ref => "all_features"
 
+mod "sshkey",
+  :git => "git://github.com/boklm/puppet-sshkeys.git"
+
